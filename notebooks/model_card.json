@@ -1,0 +1,24 @@
+{
+  "model": "TinyDermNet",
+  "img_size": 128,
+  "epochs": 40,
+  "optimizer": "AdamW",
+  "schedule": "OneCycleLR",
+  "criterion": "CE weighted + label_smoothing=0.05",
+  "sampler": "WeightedRandomSampler(1/log(1.02+count))",
+  "tta": "hflip + vflip + rot90",
+  "classes": [
+    "akiec",
+    "bcc",
+    "bkl",
+    "df",
+    "mel",
+    "nv",
+    "vasc"
+  ],
+  "test": {
+    "acc": 0.791,
+    "bal": 0.596,
+    "macroF1": 0.61
+  }
+}
